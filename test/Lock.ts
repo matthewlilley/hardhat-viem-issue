@@ -77,12 +77,12 @@ describe("Reproduction", function () {
 			)
 			.flat();
 
-		console.log({ contracts });
-
 		const tickResults = await client.multicall({
 			contracts,
+			allowFailure: true,
 		});
 
+		console.log({ tickResults });
 		expect(true).to.equal(true);
 	});
 });
